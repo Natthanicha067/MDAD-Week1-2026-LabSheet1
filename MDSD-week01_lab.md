@@ -1722,21 +1722,20 @@ flutter run
 
 ```
 flutter doctor output:
-┌─────────────────────────────────────────────────────────┐
-│                                                         │
-│  วางผลลัพธ์จาก flutter doctor ที่นี่                    │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+```
+<img width="743" height="684" alt="image" src="https://github.com/user-attachments/assets/814a8011-a966-47ea-b01a-73cf56a29c12" />
 
-Flutter Version: ___________________
-Dart Version: ______________________
-Android SDK Version: _______________
+
+Flutter Version: 3.44.4
+Dart Version: 3.12.2
+Android SDK Version: 36.0.0
 ```
 
 ### 3.2 Screenshot ของ Flutter App
 
 ```
-[แนบ Screenshot ของ Profile Card App ที่สร้าง]
+<img width="805" height="913" alt="image" src="https://github.com/user-attachments/assets/3af31ed1-6feb-4748-aab5-bf38f9b089f7" />
+
 ```
 
 **Widget Tree ที่วาด:**
@@ -1745,40 +1744,70 @@ Android SDK Version: _______________
 (วาด Widget Tree ของแอปที่สร้างด้วยมือ)
 
 MaterialApp
-└── ?
-    └── ?
-        └── ...
+
+void main() -> runApp()
+
+MyApp
+
+MaterialApp
+
+ChatPage
+
+Scaffold
+
+appBar: AppBar -> Text ("Gemini AI Chat")
+
+body: SafeArea
+
+Column
+
+[1] ListView.builder (รายการแชท)
+
+[2] Padding
+
+[3] Row (ช่องกรอก) -> TextField + IconButton
+
+floatingActionButton
+
+bottomNavigationBar
+
+drawer: Drawer -> Column -> ListTile (สองเมนู)
 ```
 
 ### 3.3 การเปรียบเทียบ Hot Reload vs Hot Restart
 
 | รายการ | Hot Reload (r) | Hot Restart (R) |
 |---|---|---|
-| ความเร็ว | | |
-| State ถูก Reset? | | |
-| ใช้เมื่อไหร่ | | |
+| ความเร็ว |เร็วมาก ใช้เวลาไม่ถึง 1 วินาที |เร็วกว่ารันใหม่แต่ช้ากว่าโหลดปกติเล็กน้อย |
+| State ถูก Reset? |ไม่รีเซ็ต ข้อมูลเก่าบนหน้าจอยังอยู่ครบ |รีเซ็ตข้อมูลบนหน้าจอทั้งหมดจะกลับไปเริ่มต้นใหม่ |
+| ใช้เมื่อไหร่ |ใช้ตอนแก้โค้ดดีไซน์ตกแต่งสีหรือแก้คำผิดทั่วไป |ใช้ตอนแก้ฟังก์ชัน initState หรือแก้พวกตัวแปรระบบ |
 
 ### 3.4 ผลการทดลอง Prompt Engineering
 
 **Prompt แบบ Simple:**
 ```
-(วาง Prompt ที่ใช้)
+<img width="1574" height="371" alt="image" src="https://github.com/user-attachments/assets/f8b6353d-3642-4211-8800-9bf533a0f48a" />
+
 ```
 
 **Prompt แบบ Detailed:**
 ```
-(วาง Prompt ที่ใช้)
+<img width="1580" height="482" alt="image" src="https://github.com/user-attachments/assets/fc67525a-e625-4ef0-a11e-10a2e69c142e" />
+
 ```
 
 **ความแตกต่างของผลลัพธ์:**
 ```
-(บันทึกสิ่งที่สังเกต)
+กินอะไรดี: ถามแบบไม่มีไอเดีย เมนูที่ได้จะตามใจปากและกว้างมาก เช่น กะเพรา, ชาบู, ส้มตำ
+
+กินอะไรดีโซเดียมต่ำ แคลน้อย มีโอเมก้าและโปรตีน : ถามเพื่อสุขภาพ/คุมน้ำหนัก เมนูจะถูกบีบให้แคบและได้สารอาหารครบถ้วนทันที เช่น สเต๊กปลาแซลมอน, ต้มยำปลากะพงน้ำใสปรุงรสน้อย, สลัดทูน่าในน้ำแร่
 ```
 
 ### 3.5 Screenshot ของ AI Chat App
 
 ```
-[แนบ Screenshot ของ Gemini AI Chat ที่ทำงานได้]
+<img width="1582" height="304" alt="image" src="https://github.com/user-attachments/assets/1cb7c0d4-fd60-4047-8f69-0132797ff5eb" />
+
 ```
 
 ---
@@ -1883,13 +1912,13 @@ week01-flutter-intro-XXXXXXXX/
 
 ### Checklist ก่อนส่ง
 
-- [ ] `flutter doctor` ไม่มี `[✗]` (มี `[!] Android Studio` ได้ — ปกติสำหรับ VS Code Workflow)
-- [ ] App รันได้บน Chrome หรือ Android Device/Emulator
-- [ ] Profile Card แสดงข้อมูลของตัวเอง
-- [ ] AI Chat คุยกับ Gemini ได้จริง
-- [ ] API Key ไม่ถูก Commit ลง Git (ตรวจสอบ `.gitignore`)
-- [ ] ตอบคำถามท้ายบทครบทุกข้อ
-- [ ] Push ขึ้น GitHub แล้ว
+- [✓ ] `flutter doctor` ไม่มี `[✗]` (มี `[!] Android Studio` ได้ — ปกติสำหรับ VS Code Workflow)
+- [✓ ] App รันได้บน Chrome หรือ Android Device/Emulator
+- [✓] Profile Card แสดงข้อมูลของตัวเอง
+- [✓ ] AI Chat คุยกับ Gemini ได้จริง
+- [✓ ] API Key ไม่ถูก Commit ลง Git (ตรวจสอบ `.gitignore`)
+- [✓ ] ตอบคำถามท้ายบทครบทุกข้อ
+- [✓ ] Push ขึ้น GitHub แล้ว
 
 ---
 
